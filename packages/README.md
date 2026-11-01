@@ -8,9 +8,9 @@
 指路。链接钉在内容 tag 上而不是 `@main` —— jsDelivr 对分支引用会 301 到 raw, 而 raw 在常见网络里不通。
 
 ```
-art-whale-widget-2.0.0.lwp  https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@plugins-2.7.6/packages/art-whale-widget-2.0.0.lwp
-art-ball-theme-1.0.0.lwp    https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@plugins-2.7.6/packages/art-ball-theme-1.0.0.lwp
-inline-timer-1.0.0.lwp      https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@plugins-2.7.6/packages/inline-timer-1.0.0.lwp
+art-whale-widget-2.0.0.lwp  https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@plugins-2.7.6/packages/art-whale-widget-2.0.0.lwp
+art-ball-theme-1.0.0.lwp    https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@plugins-2.7.6/packages/art-ball-theme-1.0.0.lwp
+inline-timer-1.0.0.lwp      https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@plugins-2.7.6/packages/inline-timer-1.0.0.lwp
 ```
 
 `cdn.jsdelivr.net` 不通时把域名换成 `fastly.jsdelivr.net` / `gcore.jsdelivr.net` / `testingcf.jsdelivr.net`
@@ -34,7 +34,7 @@ node tools/lw-plugin-index.mjs build --dir packages   # 重新生成 index.json
 生成器只从包里算那几列, 不会把这张表抹掉。
 
 **索引自己的地址也钉在 tag 上** (同一个理由): 手机上取得到的是
-`https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@index-1/index.json`;
+`https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@index-1/index.json`;
 下次重新生成索引时另打一个 tag (`index-2`), 旧的那一份留着不动。
 
 **为什么不用 GitHub Release 的直链**: `github.com` 的 Release 下载在这两台机器上都实测不通 (2026-10-11:
@@ -56,8 +56,8 @@ Luwi → 右上角那颗「菜单」按钮 → 设置 → 插件 → **「从链
 **新装就用第一份**: 它和下面两份做的是同一件事 (桌面上放一只会动的鲸鱼娘), 差别只在**不用装第二个
 APK** —— 下面那两份是 companion 那条路的实物, 留着给"要独立组件名"那种场合。
 
-链接用仓库原地址 (`https://raw.githubusercontent.com/yuloong07-star/luwi-plugins/main/packages/…`)
-也行, 或者 jsDelivr 那一份 (`https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@main/packages/…`)
+链接用仓库原地址 (`https://raw.githubusercontent.com/Luwi-developers/luwi-plugins/main/packages/…`)
+也行, 或者 jsDelivr 那一份 (`https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@main/packages/…`)
 —— 协议那边认的是"任意 https"。**本仓库这份说明与 `entry.apk` 写的都是 jsDelivr 那条**。
 
 **从链接装不比从本地装少验一样东西**: 下到 app 私有目录之后走的是同一条链 —— 验发布者签名与逐文件

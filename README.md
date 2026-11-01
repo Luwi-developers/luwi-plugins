@@ -1,10 +1,10 @@
 # luwi-plugins
 
-**Luwi 的插件生态** —— [Luwi](https://github.com/yuloong07-star/Luwi) 的"设备侧能力扩展层":
+**Luwi 的插件生态** —— [Luwi](https://github.com/Luwi-developers/Luwi) 的"设备侧能力扩展层":
 协议 [`lw-plugin/1`](docs/LW-软件插件协议.md) 的全文、对外接口那一份 (`lwplugin-api`)、两份能跑起来的
 样例插件、签名工具, 以及签好名的示例包。
 
-Luwi 本体在 [yuloong07-star/Luwi](https://github.com/yuloong07-star/Luwi), 基于
+Luwi 本体在 [Luwi-developers/Luwi](https://github.com/Luwi-developers/Luwi), 基于
 [Miuzarte/LittleWhale](https://github.com/Miuzarte/LittleWhale) (Apache-2.0)。这一份仓库的目标很
 具体: **不认识 Luwi 作者的人, 照着这里的三样东西能做出第四份插件**。
 
@@ -25,7 +25,7 @@ Luwi 有三层扩展点, 本仓库只管**最下面那一层**:
 
 | 那一层 | 它的家 | 长什么样 |
 | :-- | :-- | :-- |
-| 技能 | Luwi 仓库的 `app-skills/` (随包发的那份) 与 [yuloong07-star/app-skills](https://github.com/yuloong07-star/app-skills) (社区那份) | 一份 `SKILL.md` + `catalog.json` 里一行; **只有提示词材料, 没有代码** |
+| 技能 | Luwi 仓库的 `app-skills/` (随包发的那份) 与 [Luwi-developers/app-skills](https://github.com/Luwi-developers/app-skills) (社区那份) | 一份 `SKILL.md` + `catalog.json` 里一行; **只有提示词材料, 没有代码** |
 | dsh 插件 | Luwi 应用自己的 `host-plugin/index.mjs` | host 侧 JS 模块, 碰不到 Android |
 
 两份都是"随应用发"或"抄进 `$DSH_HOME/skills/`"的东西, 既不是 `.lwp`、也没有伴侣 APK, 因此它们
@@ -66,7 +66,7 @@ Luwi 有三层扩展点, 本仓库只管**最下面那一层**:
 **「从链接装入」**, 粘下面这一条 —— **没有第二步, 也不用装任何伴侣 APK**
 
 ```
-https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@plugins-2.7.6/packages/art-whale-widget-2.0.0.lwp
+https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@plugins-2.7.6/packages/art-whale-widget-2.0.0.lwp
 ```
 
 同一份包也躺在本仓库的 [packages/](packages/art-whale-widget-2.0.0.lwp), 用设置页那颗「装入插件包」
@@ -80,7 +80,7 @@ Luwi 那边不放 `.lwp` (2026-10-11 主人定的口径), 它的 `plugins/` 只�
 都验一遍, 验不过的那一份根本不进索引; 发版前拿 `check` 与包对一遍。**Luwi 那边读索引那一半 (P5)
 2026-10-16 接通了** (设置 → 插件 → 「浏览插件仓库」: 读 / 搜 / 装, 装之前按索引核整包 sha256 与
 发布者指纹)。能直接取的地址是
-`https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@index-2/index.json` (应用侧默认认这一条,
+`https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@index-2/index.json` (应用侧默认认这一条,
 `index-1` 留作兜底; `@main` 那一份要 raw 通的地方才取得到)。
 
 **索引里的 `description` 与 `tags` 走侧车** ([tools/lw-plugin-index.meta.json](tools/lw-plugin-index.meta.json)):
@@ -101,7 +101,7 @@ Luwi 那边不放 `.lwp` (2026-10-11 主人定的口径), 它的 `plugins/` 只�
 ### 1 · 起一份工程
 
 ```bash
-git clone https://github.com/yuloong07-star/luwi-plugins.git
+git clone https://github.com/Luwi-developers/luwi-plugins.git
 cd luwi-plugins
 ```
 
@@ -292,5 +292,5 @@ node tools/lw-plugin-sign.mjs sign --dir my-plugin --key my.key --out signed --z
 
 - [Miuzarte/LittleWhale](https://github.com/Miuzarte/LittleWhale) (Apache-2.0) —— Luwi 的全部基础;
   本仓库的插件层是在它之上做的应用级扩展
-- [yuloong07-star/Luwi](https://github.com/yuloong07-star/Luwi) (Apache-2.0) —— 插件协议、接口、样例与
+- [Luwi-developers/Luwi](https://github.com/Luwi-developers/Luwi) (Apache-2.0) —— 插件协议、接口、样例与
   签名工具的家

@@ -54,7 +54,7 @@ if (command !== 'build' && command !== 'check') {
 
 const directory = resolve(option('dir', 'packages'))
 const ref = option('ref', 'plugins-2.7.6')
-const base = option('base', `https://cdn.jsdelivr.net/gh/yuloong07-star/luwi-plugins@${ref}/packages/`)
+const base = option('base', `https://cdn.jsdelivr.net/gh/Luwi-developers/luwi-plugins@${ref}/packages/`)
 const out = resolve(option('out', 'index.json'))
 const indexFile = resolve(option('index', 'index.json'))
 
@@ -62,7 +62,7 @@ const indexFile = resolve(option('index', 'index.json'))
 const MIRRORS = ['fastly.jsdelivr.net', 'gcore.jsdelivr.net', 'testingcf.jsdelivr.net']
 
 /** 这份生态仓自己是谁 (拼 raw 那一路镜像要用) */
-const repo = option('repo', 'yuloong07-star/luwi-plugins')
+const repo = option('repo', 'Luwi-developers/luwi-plugins')
 
 /**
  * 反代 `raw.githubusercontent.com` 的几条路, 放在 `mirrors` 末尾
@@ -284,7 +284,7 @@ entries.sort((left, right) => left.id.localeCompare(right.id) || compareVersion(
 const document = {
   format: 'lw-plugin-index/1',
   generated: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
-  source: 'https://github.com/yuloong07-star/luwi-plugins',
+  source: 'https://github.com/Luwi-developers/luwi-plugins',
   note: '本文件由 tools/lw-plugin-index.mjs 生成: 每个字段都是从 packages/ 里那份 .lwp 现算的 (逐文件哈希与发布者签名都验过)。sha256 是整包的摘要, 带 sha256: 前缀。revoked 是撤销表, 命中即不该装。',
   plugins: entries,
   revoked: [],
